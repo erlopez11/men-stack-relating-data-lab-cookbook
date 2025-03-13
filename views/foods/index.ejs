@@ -15,7 +15,9 @@
             <p>There are no items in this pantry.</p>
         <% } %> 
         <% foods.forEach(item => { %>
-            <li><%= item.name %></li>
+            <li>
+                <a href="/users/<%= user._id %>/foods/<%= item._id %>"><%= item.name %></a>
+            </li>
         <% }) %>
     </ul>
 </body>
