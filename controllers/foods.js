@@ -3,8 +3,16 @@ const router = express.Router();
 const User = require('../models/user');
 
 //GET /user/:userID/foods
-router.get('/', (req, res) => {
-    res.render('foods/index.ejs');
+router.get('/', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        res.render('foods/index.ejs', {
+            foods: currentUser.pantry,
+        });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
 });
 
 // GET /user/:userId/foods/new
