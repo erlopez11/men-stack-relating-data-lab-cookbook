@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= item.name %></title>
+</head>
+<body>
+    <h1>Edit <%= item.name %></h1>
+    <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=PUT" method="post">
+        <label for="name">Food Item</label>
+        <input type="text" id="name" name="name" value="<%= item.name %>" required/>
+
+        <button type="submit">Update <%= item.name %></button>
+    </form>
+</body>
+</html>
