@@ -10,6 +10,8 @@
     <h1><%= item.name %></h1>
     <p>Pantry Item Name: <%= item.name %></p>
 
+    <a href="/users/<%= user._id %>/foods/<%= item._id %>/edit">Edit <%= item.name %> Entry</a>
+
     <form action="/users/<%= user._id %>/foods/<%= item._id %>?_method=DELETE" method="post">
         <button type="submit">Delete <%= item.name %></button>
     </form>
